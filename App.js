@@ -13,12 +13,18 @@ export default function App() {
   const [ok, setOk] = useState(true);
 
   // api 키는 항상 서버에서 받아오는게 좋다 . 
-  const API_KEY = "6fabfdcbbce83befc7b44452214b1d77"
+  const API_KEY = "-"
   const icons = {
-    Clouds: "cloudy",
+    Clouds: "cloudy-gusts",
     Clear: "day-sunny",
+    Rain: "rains",
+    Atmosphere: "",
+    Snow: "snow",
+    Drizzle: "rain",
+    Thunderstorm: "lightning",
 
-  }
+
+  };
 
   const getWeather = async () => {
     //위치 정보를 가져 가도 되는지 여부 확인 -> 승인 -> 작동
@@ -64,7 +70,7 @@ export default function App() {
         showsHorizontalScrollIndicator={false}
         contentContainerStyle={styles.weather}>
         {days.length === 0 ? (
-          <View style={styles.day}>
+          <View style={{ ...styles.day, alignItems: "center" }}>
             <ActivityIndicator color="white" style={{ marginTop: 10 }} size="large" />
           </View>
         ) : (days.map((day, index) =>
