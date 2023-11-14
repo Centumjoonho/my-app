@@ -13,7 +13,7 @@ export default function App() {
   const [ok, setOk] = useState(true);
 
   // api 키는 항상 서버에서 받아오는게 좋다 . 
-  const API_KEY = "-"
+  const API_KEY = "6fabfdcbbce83befc7b44452214b1d77"
   const icons = {
     Clouds: "cloudy-gusts",
     Clear: "day-sunny",
